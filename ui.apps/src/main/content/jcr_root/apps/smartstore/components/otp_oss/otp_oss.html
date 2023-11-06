@@ -1,0 +1,38 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='OTP Button'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'otp'}"/>
+<div data-sly-use.model="com.smartstore.core.models.CsvFileModel">
+    <sly data-sly-test.var="${model.button}">
+        <div data-sly-test="${var != ''}">
+            <button class="button-8" role="button" onclick="sendOTP()">Send OTP</button>
+        </div>
+    </sly>
+</div>
+<script>
+    function sendOTP() {
+        fetch("/smartstore/authentication/otp", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            var otp = data.otp;
+            alert("OTP generated: " + otp);
+            console.log("OTP is received");
+        })
+        .catch(error => {
+            console.error("Error generating OTP:", error);
+        });
+    }
+</script>
+
+</head>
+</html>

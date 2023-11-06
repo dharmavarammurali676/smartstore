@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon"
+          href="https://play-lh.googleusercontent.com/uURh3devCJnq0E4df7nGxiiZ66QKotH_KILfK-jvhd-WYgRPm5S1iojFPSYnFM0QAw=w240-h480-rw"
+          type="image/png" sizes="16x16">
+    <title>Booking_Product</title>
+</head>
+
+<body>
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Faq'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'logs'}"/>
+<div data-sly-use.model="com.smartstore.core.models.FaqModel">
+    <sly data-sly-test.var="${model.heading}">
+        <div data-sly-test="${var != ''}">
+            <div class="border">
+                <div class="header">${model.heading}</div>
+                <img class="image" src="${model.imagePath}" width="10" height="10">
+
+                <div data-sly-list.item="${model.faqMultiLists}">
+                    <div class="question" onclick="toggleAnswer(event)">
+                        ${item.question}
+                    </div>
+                    <div class="answer">${item.answer}</div>
+                </div>
+            </div>
+        </div>
+    </sly>
+</div>
+</div>
+</body>
+</html>
+<style>
+.image{
+position: relative;
+bottom : 20px;
+left:200px
+}
+        .faq {
+            margin-bottom: 10px;
+        }
+
+        .question {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: bold;
+            border: 2px solid red;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .question::after {
+            content: "+";
+            margin-left: 5px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+            background-color: beige; /* Set the desired background color */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .open .question::after {
+            content: "-";
+        }
+
+        .open .answer {
+            display: block;
+        }
+    </style>
+<script>
+        function toggleAnswer(event) {
+            const question = event.target;
+            const answer = question.nextElementSibling;
+
+            // Close all other answers
+            const allQuestions = document.querySelectorAll('.question');
+            const allAnswers = document.querySelectorAll('.answer');
+            for (let i = 0; i < allQuestions.length; i++) {
+                if (allQuestions[i] !== question) {
+                    allQuestions[i].parentNode.classList.remove("open");
+                    allAnswers[i].style.display = 'none';
+                }
+            }
+
+            // Toggle the clicked question and answer
+            question.parentNode.classList.toggle("open");
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
