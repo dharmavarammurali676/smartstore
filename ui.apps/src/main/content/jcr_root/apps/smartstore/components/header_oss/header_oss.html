@@ -1,0 +1,99 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" xmlns="http://www.w3.org/1999/html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Header'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'header'}"/>
+<div data-sly-use.model="com.smartstore.core.models.HeaderModel">
+    <div class="background-container">
+        <div class="container">
+            <!-- Ozmenu -->
+            <div class="menu-open"><span class="open"></span></div>
+            <div class="ozmenu mt-4">
+                <div class="menu-close"><span class="close"></span></div>
+                <ul class="ozmenu-nav">
+                    <li class="item"><a href="#">Home</a></li>
+                    <li class="item"><a href="#">About Us</a></li>
+                    <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Services</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li class="item"><a href="#">Software</a></li>
+                                <li class="item"><a href="#">Server Maintenance</a></li>
+                                <li class="item dropdownitem">
+                                    <a href="#" class="nav-dropdown">Web Hosting</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li class="item"><a href="#">Linux Hosting</a></li>
+                                            <li class="item"><a href="#">Windows Hosting</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="item"><a href="#">Graphic Design</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Web Design</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li class="item"><a href="#">Corporate Web Design</a></li>
+                                <li class="item dropdownitem">
+                                    <a href="#" class="nav-dropdown">E-Commerce</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li class="item"><a href="#">Ready E-Commerce</a></li>
+                                            <li class="item"><a href="#">Custom E-Commerce</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="item dropdownitem">
+                                    <a href="#" class="nav-dropdown">Personal Web Design</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li class="item"><a href="#">Blog Site</a></li>
+                                            <li class="item"><a href="#">Portfolio Site</a></li>
+                                            <li class="item"><a href="#">Custom Personal Site</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="item"><a href="#">Custom Web Design</a></li>
+                                <li class="item"><a href="#">Onepage Web Design</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Help</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li class="item"><a href="#">Mail Settings</a></li>
+                                <li class="item"><a href="#">Hosting Selection</a></li>
+                                <li class="item"><a href="#">Admin Panel</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item"><a href="#">Contact</a></li>
+                </ul>
+                <div class="notification">
+                    <img src="https://img.icons8.com/?size=80&id=3tujsbSLnYkN&format=png" width="33" height="33"
+                         class="logo">
+                </div> <!-- Existing code -->
+                <div class="container">
+                    <div class="logo-container">
+                        <sly data-sly-test="${model.specialMemberImage == 'Special Member'}">
+                            <img src="${model.specialMemberImage}" width="33" height="33" class="logo">
+<!--                            <span class="usertype">Special Member</span>-->
+                        </sly>
+                        <sly data-sly-test="${model.memberImage == 'Member'}">
+                            <img src="${model.memberImage}" width="33" height="33" class="logo">
+<!--                            <span class="usertype">Member</span>-->
+                        </sly>
+                        <img src="${model.unknownImage}" width="33" height="33" class="logo">
+<!--                        <span class="usertype">Unknown User</span>-->
+                    </div>
+                </div>
+                <button class="button button2">Logout</button>
+            </div>
+            <!-- /Ozmenu -->
+        </div>
+        <script src="ozmenu.js"></script>
+    </div>
+</div>

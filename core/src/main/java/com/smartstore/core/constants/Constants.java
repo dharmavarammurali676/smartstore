@@ -240,7 +240,7 @@ public class Constants {
     public static final String MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/english/members/responce/registration_failed.html";
     public static final String SPECIAL_MEMBERS_SUCCESS_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_successfull.html";
     public static final String SPECIAL_MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/english/special_members/responce/registration_failed.html";
-    public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH= "/content/smartstore/english/special_members/home_page.html";
+    public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH= "/content/smartstore/admin_configuration/special_member.html";
     public static final String MEMBERS_HOME_PAGE_PATH= "/content/smartstore/english/members/home_page.html";
     public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH_ERROR= "/content/smartstore/english/special_members/responce/invalid.html";
     public static final String MEMBERS_HOME_PAGE_PATH_ERROR= "/content/smartstore/english/members/responce/invalid.html";
