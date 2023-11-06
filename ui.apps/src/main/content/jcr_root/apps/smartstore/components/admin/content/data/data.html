@@ -1,0 +1,11 @@
+<sly
+	data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	data-sly-test.isEmpty="${properties.text}" />
+<div class="divTableData border border-primary" style="margin-bottom: 7px">
+    <div class="divTableRow" style="display: flex;width: 100%;justify-content: space-between;">
+        <div>${properties.text}</div>
+        <div>${properties.value}</div>
+    </div>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!isEmpty}"></sly>
+

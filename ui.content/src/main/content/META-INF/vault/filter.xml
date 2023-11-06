@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/smartstore" mode="merge"/>
+    <filter root="/content/smartstore" mode="merge"/>
+    <filter root="/content/dam/smartstore" mode="merge"/>
+    <filter root="/content/experience-fragments/smartstore" mode="merge"/>
+</workspaceFilter>
