@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://play-lh.googleusercontent.com/uURh3devCJnq0E4df7nGxiiZ66QKotH_KILfK-jvhd-WYgRPm5S1iojFPSYnFM0QAw=w240-h480-rw" type="image/png" sizes="16x16">
+    <title>HTTP_Error</title>
+</head>
+
+<body>
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='HTTP Responses'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'httperrors'}"/>
+<div data-sly-use.model="com.smartstore.core.models.HTTPResponseModel">
+    <sly data-sly-test.var="${model.httpErrorTittle}">
+        <div data-sly-test="${var != ''}">
+            <div class="border">
+                <div class="title">&#xe001; ${model.httpErrorTittle} &#xe001;</div>
+                <div class="desc">&#xe5c8; ${model.httpErrorDescription}</div>
+            </div>
+        </div>
+    </sly>
+</div>
+</body>
+</html>
