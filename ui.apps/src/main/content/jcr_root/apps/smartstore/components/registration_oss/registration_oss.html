@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://play-lh.googleusercontent.com/uURh3devCJnq0E4df7nGxiiZ66QKotH_KILfK-jvhd-WYgRPm5S1iojFPSYnFM0QAw=w240-h480-rw" type="image/png" sizes="16x16">
+    <title>Registartion_Page</title>
+</head>
+
+<body>
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Registration Site'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'registration'}"/>
+<div data-sly-use.model="com.smartstore.core.models.RegistrationModel">
+    <sly data-sly-test.var="${model.heading}">
+        <div data-sly-test="${var != ''}">
+            <p class="borderline"></p>
+            <div class="redborder">
+                <div class="webdesc">${model.webDescription}</div>
+            </div>
+            <div class="login-text">
+                <div class="logo">
+                    <span><i class="fab fa-speakap"></i></span>
+                    <span>New Member Registration </span>
+                </div>
+                <h1>SignUp</h1>
+                <p>${model.heading}</p>
+                <form class="flex-c" action="/smartstore/new/member/registration" target="_parent" method="post">
+                    <div class="input-box">
+                        <span class="label" >UserName</span>
+                        <div class=" flex-r input">
+                            <input type="text" placeholder="Enter username" name="username">
+                            <i class="fas fa-at"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="label">Password</span>
+                        <div class="flex-r input">
+                            <input type="password" placeholder="Enter password" name="password">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="label">Confirm Password</span>
+                        <div class=" flex-r input">
+                            <input type="text" placeholder="Re-enter password" name="repassword">
+                            <i class="fas fa-at"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="label">Email</span>
+                        <div class=" flex-r input">
+                            <input type="text" placeholder="Enter email" name="email">
+                            <i class="fas fa-at"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="label">Mobile Number</span>
+                        <div class="flex-r input">
+                            <input type="password" placeholder="Enter mobile number" name="mobileno">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="checkbox-wrapper-26">
+                        <input type="checkbox" id="_checkbox-26">
+                        <label for="_checkbox-26">
+                            <div class="tick_mark"></div>
+                        </label>
+                    </div>
+                    <label class="sp">Special Member Registration</label>
+                    <input class="btn" type="submit" value="Submit">
+                    <span class="extra-line">
+                        <span class="last">If you are a Member ? </span>
+                        <a href="#">Sign In</a>
+                    </span>
+                </form>
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/smartstore-logo-black-and-white.png" width="200"
+                     height="200">
+                <span class="leftheading">${model.leftHeading}</span>
+                <a href="${model.loginLink}.html">
+                    <button class="button" style="vertical-align:middle">
+                        <span>${model.reDirectButton}</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </sly>
+</div>
+</body>
+</html>
+
+<style>
+
+
+.flex-r ,.flex-c {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.flex-c{
+    flex-direction: column;
+}
+.flex-r{
+    flex-direction: row;
+}
+
+
+.login-text {
+    max-width: 400px;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: relative;
+        top: 130px;
+    left: 900px;
+    }
+
+.logo{
+    margin-bottom: 20px;
+}
+.logo span , .logo span i{
+    font-size: 25px;
+       font-family: sans-serif;
+    bottom: 70px;
+    position: relative;
+    color: #0d8aa7;
+}
+
+.login-text h1{
+        font-size: 25px;
+    bottom: 77px;
+        border-left: 6px solid red;
+    background-color: #e0e5e587;
+    position: relative;
+}
+.login-text p{
+    font-size: 15px;
+        bottom: 70px;
+    position: relative;
+    color: #000000B2;
+}
+
+form{
+    align-items: flex-start !important;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.input-box{
+       margin: 12px 0px;
+    width: 336px;
+        bottom: 70px;
+    position: relative;
+}
+
+.label{
+      font-size: 15px;
+     bottom: 10px;
+    position: relative;
+    color: black;
+    font-family: system-ui;
+    margin-bottom: 3px;
+}
+
+.input{
+    background-color: #F6F6F6;
+    padding: 0px 5px;
+    border: 2px solid rgba(216, 216, 216, 1);
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+
+input{
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    background-color: #F6F6F6;
+    flex: 1;
+}
+.input i{
+    color:rgba(0, 0, 0, 0.4);
+}
+.check{
+        bottom: 60px;
+    position: relative;
+}
+
+.check span{
+    color:#000000B2;
+    font-size: 15px;
+        bottom: 2px;
+    position: relative;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.btn {
+    border: none;
+    color: white;
+       padding: 11px 139px;
+    position: relative;
+      bottom: 35px;
+        font-family: monospace;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 61px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn{
+  background-color: white;
+  color: black;
+  border: 1px solid #008CBA;
+}
+
+.btn:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.last{
+    font-size: 15px;
+        bottom: 23px;
+    position: relative;
+    font-weight: 600;
+
+}
+.extra-line a{
+font-size: 15px;
+       bottom: 24px;
+    position: relative;
+    color: #0095B6;
+}
+.webdesc{
+    position: relative;
+       top: 17px;
+    text-align: center;
+    font-size: 28px;
+    color: #fa0808f0;
+    text-shadow: 0 0 black;
+}
+.message{
+    position: relative;
+        top: 35px;
+    text-align: center;
+    font-size: 20px;
+    color: #0c0c0c;
+    text-shadow: 0 0 black;
+}
+.aboutlink{
+    position: relative;
+    bottom: -16px;
+    font-family: monospace;
+    left: 1203px;
+}
+.redborder{
+       border-style: double;
+      height: 72px;
+        background: aliceblue;
+    border-color: #008CBA;
+}
+img{
+    position: relative;
+     right: 917px;
+     bottom: 939px;
+    rotate: 350deg;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 11px 60px;
+    position: relative;
+ right: 628px;
+    bottom: 726px;
+    font-family: monospace;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 61px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button{
+  background-color: white;
+  color: black;
+  border: 1px solid #008CBA;
+}
+
+.button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.leftheading{
+    position: relative;
+    font-family: monospace;
+    font-size: 21px;
+           right: 790px;
+    bottom: 737px;
+}
+.leftmessage{
+position: relative;
+    right: 620px;
+    bottom: 523px;
+}
+.signup{
+ position: relative;
+      right: 924px;
+    bottom: 675px;
+}
+.agree{
+position: relative;
+          bottom: 50px;
+    font-size: 15px;
+    bottom: 50px;
+    position: relative;
+    color: #000000B2;
+}
+  .checkbox-wrapper-26 * {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  .checkbox-wrapper-26 input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox-wrapper-26 label {
+      bottom: 33px;
+    left: 20px;
+    --size: 30px;
+    --shadow: calc(var(--size) * .07) calc(var(--size) * .1);
+
+    position: relative;
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    margin: 0 auto;
+    background-color: #f72414;
+    border-radius: 50%;
+    box-shadow: 0 var(--shadow) #ffbeb8;
+    cursor: pointer;
+    transition: 0.2s ease transform, 0.2s ease background-color,
+      0.2s ease box-shadow;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .checkbox-wrapper-26 label:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: calc(var(--size) * .7);
+    height: calc(var(--size) * .7);
+    margin: 0 auto;
+    background-color: #fff;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    box-shadow: inset 0 var(--shadow) #ffbeb8;
+    transition: 0.2s ease width, 0.2s ease height;
+  }
+
+  .checkbox-wrapper-26 label:hover:before {
+    width: calc(var(--size) * .55);
+    height: calc(var(--size) * .55);
+    box-shadow: inset 0 var(--shadow) #ff9d96;
+  }
+
+  .checkbox-wrapper-26 label:active {
+    transform: scale(0.9);
+  }
+
+  .checkbox-wrapper-26 .tick_mark {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    left: calc(var(--size) * -.05);
+    width: calc(var(--size) * .6);
+    height: calc(var(--size) * .6);
+    margin: 0 auto;
+    margin-left: calc(var(--size) * .14);
+    transform: rotateZ(-40deg);
+  }
+
+  .checkbox-wrapper-26 .tick_mark:before,
+  .checkbox-wrapper-26 .tick_mark:after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 2px;
+    opacity: 0;
+    transition: 0.2s ease transform, 0.2s ease opacity;
+  }
+
+  .checkbox-wrapper-26 .tick_mark:before {
+    left: 0;
+    bottom: 0;
+    width: calc(var(--size) * .1);
+    height: calc(var(--size) * .3);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+    transform: translateY(calc(var(--size) * -.68));
+  }
+
+  .checkbox-wrapper-26 .tick_mark:after {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(var(--size) * .1);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
+    transform: translateX(calc(var(--size) * .78));
+  }
+
+  .checkbox-wrapper-26 input[type="checkbox"]:checked + label {
+    background-color: #07d410;
+    box-shadow: 0 var(--shadow) #92ff97;
+  }
+
+  .checkbox-wrapper-26 input[type="checkbox"]:checked + label:before {
+    width: 0;
+    height: 0;
+  }
+
+  .checkbox-wrapper-26 input[type="checkbox"]:checked + label .tick_mark:before,
+  .checkbox-wrapper-26 input[type="checkbox"]:checked + label .tick_mark:after {
+    transform: translate(0);
+    opacity: 1;
+  }
+  .sp{
+   position: relative;
+       left: 57px;
+    font-family: cursive;
+    bottom: 61px;
+  }
+</style>
+
+<script>
+$(document).ready(function () {
+  // Attach a click event handler to the checkbox
+  $('#_checkbox-26').on('click', function () {
+    var isChecked = $(this).prop('checked');
+    // Send an AJAX request to the servlet with the checkbox value
+    $.ajax({
+      type: 'POST',
+      url: '/bin/reg/storeCheckboxValue',
+      data: {
+        isChecked: isChecked
+      },
+      success: function (response) {
+        // Handle the JSON response
+        console.log('Special Member Login:', response.isChecked);
+        // You can now access the value with response.isChecked (true or false)
+      },
+      error: function (xhr, status, error) {
+        // Handle errors
+        console.error('Error storing checkbox value:', error);
+      }
+    });
+  });
+});
+</script>
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2023-11-05T23:07:15.558-08:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/smartstore/settings/wcm/templates/page-orders_oss"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="smartstore/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="smartstore/components/container"
+            layout="simple">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="smartstore/components/container"
+                layout="responsiveGrid">
+                <container
+                    jcr:lastModified="{Date}2023-11-05T23:05:50.600-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="smartstore/components/container"
+                    layout="responsiveGrid"/>
+                <container_328319934
+                    jcr:created="{Date}2023-11-05T23:04:54.962-08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-11-05T23:04:54.962-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="smartstore/components/container"
+                    editable="{Boolean}true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                    </cq:responsive>
+                </container_328319934>
+                <container_783501030
+                    jcr:created="{Date}2023-11-05T23:05:30.524-08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-11-05T23:05:30.524-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="smartstore/components/container"
+                    editable="{Boolean}true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                    </cq:responsive>
+                </container_783501030>
+            </container>
+            <experiencefragment-footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="smartstore/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/smartstore/us/en/site/footer/master"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}768"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>
