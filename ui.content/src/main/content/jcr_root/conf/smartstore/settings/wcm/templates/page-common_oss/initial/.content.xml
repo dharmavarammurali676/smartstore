@@ -11,13 +11,20 @@
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="smartstore/components/container">
-                <title
+                <container_135379665
+                    jcr:created="{Date}2023-11-29T22:37:13.421-08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-11-29T22:38:09.187-08:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="smartstore/components/title"/>
-                <container
+                    sling:resourceType="smartstore/components/container"/>
+                <container_604075822
+                    jcr:created="{Date}2023-11-29T22:37:49.290-08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-11-29T22:38:13.007-08:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="smartstore/components/container"
-                    layout="responsiveGrid"/>
+                    sling:resourceType="smartstore/components/container"/>
             </container>
         </root>
     </jcr:content>

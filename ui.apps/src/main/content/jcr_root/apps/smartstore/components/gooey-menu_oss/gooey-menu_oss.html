@@ -1,0 +1,30 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" xmlns="http://www.w3.org/1999/html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Header'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'header'}"/>
+body
+header
+nav#mainnav(role="navigation")
+ul
+li
+a(href="#")
+i.fa.fa-home
+span Home
+li
+a(href="#")
+i.fa.fa-smile-o
+span About
+li
+a(href="#")
+i.fa.fa-globe
+span Clients
+li
+a(href="#")
+i.fa.fa-envelope-o
+span Contact Us
+li
+a(href="#")
+i.fa.fa-bars
+
+section
+h1 Simple Nav

@@ -1,0 +1,87 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Description'}"></sly>
+
+<div data-sly-use.model="com.smartstore.core.models.Description">
+
+    <div class="box_container">
+        ${model.description}
+    </div>
+    <label class="triangle-with-partial-borders"><span class="total">Total Pages :</span>
+        <span class="count">${model.pagesCount}</span>
+    </label>
+</div>
+
+<style>
+    .triangle-with-partial-borders {
+        border: 1px solid #333;
+        padding: 17px 40px;
+        position: relative;
+        width: 50px;
+        top: 97px;
+        left: 29px;
+    }
+
+    .triangle-with-partial-borders:before,
+    .triangle-with-partial-borders:after {
+        content: "";
+        display: block;
+        height: 0;
+        left: 50%;
+        position: absolute;
+        width: 0;
+    }
+
+    .triangle-with-partial-borders:before {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 6px solid red;
+        margin-left: -5px;
+        top: -6px;
+        z-index: 4;
+    }
+
+    .triangle-with-partial-borders:after {
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 5px solid #fff;
+        margin-left: -3px;
+        top: -5px;
+        z-index: 5;
+    }
+
+    .count {
+        color: #010101;
+        font-size: 20px;
+        font-family: cursive;
+    }
+
+    .total {
+        color: #ed0a64;
+        font-family: cursive;
+    }
+
+    .total_pages {
+        color: #1bd6cc;
+    }
+
+    .box_container {
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 16px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        min-width: 311px;
+        left: 25px;
+        position: relative;
+        max-width: 1470px;
+        height: 11em;
+        top: 30px;
+        display: grid;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+
+    }
+</style>

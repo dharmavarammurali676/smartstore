@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="https://play-lh.googleusercontent.com/uURh3devCJnq0E4df7nGxiiZ66QKotH_KILfK-jvhd-WYgRPm5S1iojFPSYnFM0QAw=w240-h480-rw" type="image/png" sizes="16x16">
+    <link rel="icon"
+          href="https://play-lh.googleusercontent.com/uURh3devCJnq0E4df7nGxiiZ66QKotH_KILfK-jvhd-WYgRPm5S1iojFPSYnFM0QAw=w240-h480-rw"
+          type="image/png" sizes="16x16">
     <title>Response</title>
 </head>
 
@@ -17,8 +19,10 @@
 <div data-sly-use.model="com.smartstore.core.models.ResponseModel">
     <sly data-sly-test.var="${model.imagePath}">
         <div data-sly-test="${var != ''}">
+
             <div class="alert">
-                <img src="${model.imagePath}" width="130" height="130">
+                <div class="full-container">
+                  <img src="${model.imagePath}" width="110" height="110">
 
                 <sly data-sly-test="${model.statuses == 'SuccessStatus'}">
                     <div>
@@ -43,20 +47,22 @@
                         <strong class="statusFour">${model.alert}</strong>
                     </div>
                 </sly>
-
                 <p class="message">${model.message}</p>
                 <div class="retitle">${model.reDirectTitle}</div>
-                <a href="${model.rightButton}.html">
-                    <button class="forgetButton" style="vertical-align:middle">
-                        <span>${model.rightButtonName}</span>
-                    </button>
-                </a>
-                <a href="${model.reDirectLink}.html">
-                    <button class="forgetButton2" style="vertical-align:middle">
-                        <span>${model.leftButtonName}</span>
-                    </button>
-                </a>
+                <div class="buttons_container">
+                    <a href="${model.rightButton}.html">
+                        <button class="forgetButton" style="vertical-align:middle">
+                            <span>${model.rightButtonName}</span>
+                        </button>
+                    </a>
+                    <a href="${model.reDirectLink}.html">
+                        <button class="forgetButton2" style="vertical-align:middle">
+                            <span>${model.leftButtonName}</span>
+                        </button>
+                    </a>
+                </div>
             </div>
+        </div>
         </div>
     </sly>
 </div>
@@ -67,131 +73,226 @@
 <style>
 
     .alert {
-           border: 2px solid #00cbff;
+        border: 2px solid #00cbff;
         padding: 150px 70px;
-            background-color: #e1e1e140;
+        height: 15em;
+        background-color: #e1e1e140;
     }
+
     .alert:hover {
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
-       .statusOne {
-         text-align: center;
-         color: #0dbc58;
-         font-size: 45px;
-         position: relative;
-           bottom: 75px;
-         left: 152px;
+    .full-container {
+        border: 0px solid #f0e8ea;
+        position: relative;
+        font-family: monospace;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 2px 6px;
+        min-width: 967px;
+        right: 54px;
+        max-width: 330px;
+        height: 29em;
+
+}
+    .statusOne {
+        border: 0px solid #f0e8ea;
+        position: relative;
+        font-family: emoji;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 2px 6px;
+        /* right: 21px; */
+        min-width: 309px;
+        max-width: 330px;
+        height: 12em;
+        text-align: center;
+        color: #0dbc58;
+        font-size: 45px;
+        bottom: 124px;
+        left: 152px;
     }
-        .statusTwo {
-             text-align: center;
-                color: red;
-             font-size: 45px;
-             position: relative;
-           bottom: 75px;
-           left: 140px;
-        }
-            .statusThree {
-                 text-align: center;
-                    color: #ffc300d9;
-                 font-size: 45px;
-                 position: relative;
-                   bottom: 75px;
-                   left: 342px;
-            }
-                .statusFour {
-                     text-align: center;
-                    color: #000fffd9;
-                     font-size: 45px;
-                     position: relative;
-                       bottom: 75px;
-                       left: 342px;
-                }
-    .message{
-          text-indent: 50px;
-          position: relative;
-            top: -63px;
-          left: 125px;
-          text-align: justify;
-          font-family: sans-serif;
-          letter-spacing: 2px;
+
+    .statusTwo {
+        border: 0px solid #f0e8ea;
+        position: relative;
+        font-family: monospace;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 2px 6px;
+        /* right: 21px; */
+        min-width: 309px;
+        max-width: 330px;
+        height: 12em;
+        text-align: center;
+        color: red;
+        font-size: 45px;
+        bottom: 111px;
+        left: 237px;
     }
-         .retitle {
-                    text-align: center;
-                    color: #938d8d;
-                    font-size: 18px;
-                    right: 133px;
-                    position: relative;
-                    top: -29px;
-        }
-             a{
-         text-align: center;
-             color: #3a54a3;
-             font-size: 16px;
-             font-family: serif;
-             left: 386px;
-             position: relative;
-             top: -46px;
+
+    .statusThree {
+        border: 2px solid #f0e8ea;
+        position: relative;
+        font-family: monospace;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 2px 6px;
+        /* right: 21px; */
+        min-width: 309px;
+        max-width: 330px;
+        height: 12em;
+        text-align: center;
+        color: #ffc300d9;
+        font-size: 45px;
+        bottom: 75px;
+        left: 43px;
+    }
+
+    .statusFour {
+        border: 2px solid #f0e8ea;
+        position: relative;
+        font-family: monospace;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 2px 6px;
+        /* right: 21px; */
+        min-width: 309px;
+        max-width: 330px;
+        height: 12em;
+        text-align: center;
+        color: #000fffd9;
+        font-size: 45px;
+        bottom: 75px;
+        left: 43px;
+    }
+
+    .message {
+        border: 0px solid #f0e8ea;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 5px;
+        left: 50px;
+        min-width: 864px;
+        max-width: 329px;
+        min-height: 106px;
+        font-size: 17px;
+        position: relative;
+        top: -105px;
+        /* text-align: justify; */
+        font-family: serif;
             }
-            img{
-                  position: relative;
-                  left: 362px;
-                  bottom: 137px;
+
+            .retitle {
+                position: relative;
+                font-family: monospace;
+                border-radius: 3px;
+                box-sizing: border-box;
+                margin-right: 16px;
+                padding: 5px;
+                right: 14px;
+                min-width: 309px;
+                max-width: 330px;
+                height: 12em;
+                text-align: center;
+                color: #938d8d;
+                font-size: 18px;
+                right: 133px;
+                position: relative;
+                top: -29px;
             }
-.forgetButton {
-       border: none;
-    color: white;
-   padding: 25px 70px;
-    position: relative;
-    right: 166px;
-    top: -4px;
-    font-family: monospace;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    /* border-radius: 61px; */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
 
-.forgetButton{
-  background-color: white;
-  color: black;
-  border: 1px solid #008CBA;
-}
+            a {
+                text-align: center;
+                color: #3a54a3;
+                font-size: 16px;
+                font-family: serif;
+                left: 386px;
+                position: relative;
+                top: -46px;
+            }
 
-.forgetButton:hover {
-  background-color: #008CBA;
-  color: white;
-}
-.forgetButton2 {
-       border: none;
-    color: white;
-   padding: 25px 70px;
-    position: relative;
-          position: relative;
-  right: 80px;
-    bottom: 5px;
-    font-family: monospace;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    /* border-radius: 61px; */
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
+            img {
+                position: relative;
+                left: 422px;
+                bottom: 137px;
+            }
 
-.forgetButton2{
-  background-color: white;
-  color: black;
-  border: 1px solid #008CBA;
-}
+            .forgetButton {
+                border: none;
+                color: white;
+                padding: 17px 53px;
+                position: relative;
+                right: 301px;
+                top: 49px;
+                font-family: monospace;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                /* border-radius: 61px; */
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
 
-.forgetButton2:hover {
-  background-color: #008CBA;
-  color: white;
-}
+    .forgetButton {
+        background-color: white;
+        color: black;
+        border: 1px solid #008CBA;
+    }
+
+    .forgetButton:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    .forgetButton2 {
+        border: none;
+        color: white;
+        padding: 17px 53px;
+        position: relative;
+        position: relative;
+        right: 198px;
+        bottom: -50px;
+        font-family: monospace;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .forgetButton2 {
+        background-color: white;
+        color: black;
+        border: 1px solid #1eb0c9;
+    }
+
+    .forgetButton2:hover {
+        background-color: #1eb0c9;
+        color: white;
+    }
+
+    .buttons_container {
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 5px;
+        right: -157px;
+        bottom: 323px;
+        min-width: 608px;
+        max-width: 330px;
+        height: 7em;
+    }
 </style>

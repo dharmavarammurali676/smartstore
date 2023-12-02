@@ -60,10 +60,10 @@ public class LoginAuthenticationServlet extends SlingAllMethodsServlet {
         if (isChecked) {
             boolean isSuccess = specialMemberLogin(resourceResolver, email, password, request, response, loginEmail, validOtp);
             if (isSuccess) {
-                emailService.sendEmail(email,
-                        new String[]{Constants.TO_EMAIL, Constants.CC_EMAIL},
-                        "Alert",
-           generateLoginSuccessEmailContent(email,Constants.SPECIAL_MEMBER,"Murali"));
+//                emailService.sendEmail(email,
+//                        new String[]{Constants.TO_EMAIL, Constants.CC_EMAIL},
+//                        "Alert",
+//           generateLoginSuccessEmailContent(email,Constants.SPECIAL_MEMBER,"Murali"));
                 response.sendRedirect(Constants.SPECIAL_MEMBERS_HOME_PAGE_PATH);
             } else {
                 sendAlertEmail(email);

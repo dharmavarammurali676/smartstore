@@ -1,0 +1,324 @@
+<div id="popupForm" class="popup">
+    <div class="popup-content">
+        <span id="closePopupBtn">&times;</span>
+        <form action="/secure/delete/account" method="post" target="_self">
+            <h2>Delete SmartStore Account</h2>
+            <div class="body_container">
+                <label>Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label>Password</label>
+                <input type="password" id="password" name="password" required>
+                <p class="msg_checkbox">If your Special Member Choose checkbox</p>
+                <div class="checkbox-wrapper-19">
+                    <input type="checkbox" id="cbtest-19" />
+                    <label for="cbtest-19" class="check-box">
+                </div>
+                <button type="submit">Delete Account</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+    .msg_checkbox{
+        color: slategrey;
+        position: relative;
+        left: -90px;
+    }
+    .checkbox-wrapper-19 {
+        box-sizing: border-box;
+        --background-color: #fff;
+        --checkbox-height: 25px;
+    }
+
+    @-moz-keyframes dothabottomcheck-19 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) / 2);
+        }
+    }
+
+    @-webkit-keyframes dothabottomcheck-19 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) / 2);
+        }
+    }
+
+    @keyframes dothabottomcheck-19 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) / 2);
+        }
+    }
+
+    @keyframes dothatopcheck-19 {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) * 1.2);
+        }
+    }
+
+    @-webkit-keyframes dothatopcheck-19 {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) * 1.2);
+        }
+    }
+
+    @-moz-keyframes dothatopcheck-19 {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) * 1.2);
+        }
+    }
+
+    .checkbox-wrapper-19 input[type=checkbox] {
+        display: none;
+    }
+
+    .checkbox-wrapper-19 .check-box {
+        height: var(--checkbox-height);
+        width: var(--checkbox-height);
+        background-color: transparent;
+        border: calc(var(--checkbox-height) * .1) solid #000;
+        border-radius: 5px;
+        position: relative;
+        bottom: 36px;
+        display: inline-block;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-transition: border-color ease 0.2s;
+        -o-transition: border-color ease 0.2s;
+        -webkit-transition: border-color ease 0.2s;
+        transition: border-color ease 0.2s;
+        cursor: pointer;
+    }
+    .checkbox-wrapper-19 .check-box::before,
+    .checkbox-wrapper-19 .check-box::after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        height: 0;
+        width: calc(var(--checkbox-height) * .2);
+        background-color: #34b93d;
+        display: inline-block;
+        -moz-transform-origin: left top;
+        -ms-transform-origin: left top;
+        -o-transform-origin: left top;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        border-radius: 5px;
+        content: " ";
+        -webkit-transition: opacity ease 0.5;
+        -moz-transition: opacity ease 0.5;
+        transition: opacity ease 0.5;
+    }
+    .checkbox-wrapper-19 .check-box::before {
+        top: calc(var(--checkbox-height) * .72);
+        left: calc(var(--checkbox-height) * .41);
+        box-shadow: 0 0 0 calc(var(--checkbox-height) * .05) var(--background-color);
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+    .checkbox-wrapper-19 .check-box::after {
+        top: calc(var(--checkbox-height) * .37);
+        left: calc(var(--checkbox-height) * .05);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box,
+    .checkbox-wrapper-19 .check-box.checked {
+        border-color: #34b93d;
+    }
+    .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box::after,
+    .checkbox-wrapper-19 .check-box.checked::after {
+        height: calc(var(--checkbox-height) / 2);
+        -moz-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+        -o-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+        -webkit-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+        animation: dothabottomcheck-19 0.2s ease 0s forwards;
+    }
+    .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box::before,
+    .checkbox-wrapper-19 .check-box.checked::before {
+        height: calc(var(--checkbox-height) * 1.2);
+        -moz-animation: dothatopcheck-19 0.4s ease 0s forwards;
+        -o-animation: dothatopcheck-19 0.4s ease 0s forwards;
+        -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
+        animation: dothatopcheck-19 0.4s ease 0s forwards;
+    }
+
+    .body_container{
+        box-shadow: rgb(243 7 7 / 61%) 0px 30px 90px;
+        border-radius: 3px;
+        border: 0px solid #5e5759;
+        box-sizing: border-box;
+        margin-right: 16px;
+        position: relative;
+        left: -108px;
+        top: -30px;
+        padding: 16px;
+        min-width: 518px;
+        max-width: 345px;
+        font-family: system-ui;
+        font-size: 15px;
+        height: 300px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 26px 190px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        animation: slideIn 0.5s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+        from {
+            top: -100%;
+        }
+        to {
+            top: 50%;
+        }
+    }
+
+    .popup form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .popup h2 {
+        text-align: center;
+        position: relative;
+        bottom: 30px;
+        font-family: emoji;
+    }
+
+    .popup label {
+        display: block;
+        margin-bottom: 8px;
+        position: relative;
+        right: 378px;
+    }
+    .popup label {
+        display: block;
+        margin-bottom: 8px;
+        position: relative;
+        right: 378px;
+    }
+
+    .popup input {
+        width: 358px;
+        padding: 10px;
+        right: 62px;
+        top: 1px;
+        position: relative;
+        margin-bottom: 16px;
+    }
+
+    .popup button {
+        width: 40%;
+        padding: 10px;
+        right: 155px;
+        bottom: 25px;
+        position: relative;
+        background-color: #378067;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .popup button:hover {
+        background-color: #fc0101;
+    }
+
+    #closePopupBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #555;
+    }
+
+    #closePopupBtn:hover {
+        color: #333;
+    }
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var showPopupBtn = document.getElementById('showPopupBtn');
+        var closePopupBtn = document.getElementById('closePopupBtn');
+        var popupForm = document.getElementById('popupForm');
+
+        showPopupBtn.addEventListener('click', function () {
+            popupForm.style.display = 'block';
+        });
+
+        closePopupBtn.addEventListener('click', function () {
+            popupForm.style.display = 'none';
+        });
+    });
+
+</script>

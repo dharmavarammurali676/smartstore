@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-12-02T17:37:24.544+01:00"
+        cq:lastModified="{Date}2023-12-02T01:06:26.977-08:00"
         cq:lastModifiedBy="admin"
         cq:policy="smartstore/components/page/policy"
         jcr:primaryType="nt:unstructured"
@@ -57,9 +57,25 @@
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
                         </components>
                     </smartstore>
+                    <container
+                        cq:policy="smartstore/components/container/policy_491039232533900"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                    <container_1055166474
+                        cq:policy="smartstore/components/container/policy_494780734507900"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                    <container_73503134
+                        cq:policy="smartstore/components/container/policy_494780734507900"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
                 </container>
                 <title
                     cq:policy="smartstore/components/title/policy_641475696923109"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping"/>
+                <container_1421446369
+                    cq:policy="smartstore/components/container/policy_493864089724100"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/core/components/policies/mapping"/>
             </container>
