@@ -42,7 +42,7 @@
         <aem.host>localhost</aem.host>
         <aem.port>6502</aem.port>
         <aem.publish.host>localhost</aem.publish.host>
-        <aem.publish.port>4503</aem.publish.port>
+        <aem.publish.port>6503</aem.publish.port>
         <sling.user>admin</sling.user>
         <sling.password>admin</sling.password>
         <vault.user>admin</vault.user>
@@ -91,8 +91,8 @@
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <message>Project must be compiled
-                                        with Java 8 or higher</message>
-                                    <version>1.8.0</version>
+                                        with Java 11 or higher</message>
+                                    <version>11</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>

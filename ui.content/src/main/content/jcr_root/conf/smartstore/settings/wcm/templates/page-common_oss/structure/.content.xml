@@ -3,6 +3,8 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2023-11-29T22:42:23.838-08:00"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/smartstore/settings/wcm/templates/page-common_oss"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="smartstore/components/page">
@@ -10,19 +12,45 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="smartstore/components/container"
             layout="simple">
-            <experiencefragment-header
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="smartstore/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/smartstore/us/en/site/header/master"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="smartstore/components/container"
                 layout="responsiveGrid">
-                <title
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="smartstore/components/title"
-                    editable="{Boolean}true"/>
                 <container
+                    jcr:lastModified="{Date}2023-11-29T22:38:17.898-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="smartstore/components/container"
+                    layout="responsiveGrid">
+                    <experiencefragment
+                        jcr:created="{Date}2023-11-29T22:42:11.627-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-11-29T22:42:23.831-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="smartstore/components/experiencefragment"
+                        fragmentVariationPath="/content/experience-fragments/smartstore/us/en/site/header/master"/>
+                </container>
+                <container_135379665
+                    jcr:created="{Date}2023-11-29T22:37:13.421-08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-11-29T22:37:13.421-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="smartstore/components/container"
+                    editable="{Boolean}true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="2"
+                            width="8"/>
+                    </cq:responsive>
+                </container_135379665>
+                <container_604075822
+                    jcr:created="{Date}2023-11-29T22:37:49.290-08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-11-29T22:37:49.290-08:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="smartstore/components/container"
                     editable="{Boolean}true"/>

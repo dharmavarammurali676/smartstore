@@ -126,7 +126,7 @@
                     </setAlertStatus>
                     <message
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                             fieldLabel="success_response_message"
                             name="./message"/>
                     <rightButton

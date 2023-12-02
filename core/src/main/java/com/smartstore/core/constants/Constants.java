@@ -78,6 +78,7 @@ public class Constants {
     public static final String SHOW_ORDER_PATH = "smartstore/show/order";
 
     public static final String SHOW_DELETE_ORDER_PATH = "/smartphone/show&delete/order";
+    public static final String DELETE_SMART_STORE_ACCOUNT_PATH = "/secure/delete/account";
 
     public static final String CREATE_NODE = "/bin/create/new/node";
     public static final String EQUAL = "=";
@@ -237,10 +238,11 @@ public class Constants {
     public static final String CONTACT_NUMBER = "ContactNumber";
     public static final String REGISTRATION_DATE = "RegisteredDate";
     public static final String MEMBERS_SUCCESS_RESPONSE_REDIRECT = "/content/smartstore/english/members/responce/registration_success.html";
-    public static final String MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/english/members/responce/registration_failed.html";
+    public static final String MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_failure.html";
     public static final String SPECIAL_MEMBERS_SUCCESS_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_successfull.html";
-    public static final String SPECIAL_MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/english/special_members/responce/registration_failed.html";
-    public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH= "/content/smartstore/admin_configuration/special_member.html";
+    public static final String SPECIAL_MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_failure.html";
+    public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH= "/content/smartstore/root_page.html";
+    public static final String LOGIN_ATTEMPT_FAILED_PATH= "/content/smartstore/admin_configuration/status/login_failed.html";
     public static final String MEMBERS_HOME_PAGE_PATH= "/content/smartstore/english/members/home_page.html";
     public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH_ERROR= "/content/smartstore/english/special_members/responce/invalid.html";
     public static final String MEMBERS_HOME_PAGE_PATH_ERROR= "/content/smartstore/english/members/responce/invalid.html";

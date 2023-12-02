@@ -1,0 +1,25 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Hover'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'hover'}"/>
+<div data-sly-use.model="com.smartstore.core.models.HoverModel">
+    <div class="boxcontainer">
+
+        <div data-sly-list.item="${model.hoverList}">
+            <img class="image" src="${item.imagePath}" height="20" width="20">
+            <div class="heading">
+                ${item.heading}
+            </div>
+                <div class="description">
+                    ${item.description}
+                </div>
+            <div class="buttonLink">
+                <a href="${item.buttonLink}">${item.buttonLabel}</a>
+            </div>
+        </div>
+    </div>
+</div>
+</sly>
+</div>
+</head>
+

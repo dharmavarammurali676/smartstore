@@ -1,0 +1,343 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Responsive Time Line'}"></sly>
+
+<div data-sly-use.model="com.smartstore.core.models.ResponsiveTimeLineModel">
+    <sly data-sly-list.items="${model.timeLinesItems}">
+        <div data-sly-test="${model.showTimeLine == 'true'}">
+            <div class="timeline">
+                <div class="entry">
+                    <div class="title">
+                        <h3 class="time">${items.date}</h3>
+                        <!-- If itemsList.count is 4, render a button, otherwise render an anchor -->
+                        <sly data-sly-test="${itemsList.count == 4}">
+                            <a class="button-6" id="showPopupBtn">${items.pageTitle}</a>
+                            <sly data-sly-include="delete-secure-popup.html"></sly>
+                        </sly>
+                        <sly data-sly-test="${itemsList.count != 4}">
+                            <a class="button-6" href="${items.pageLink}">${items.pageTitle}</a>
+                        </sly>
+
+                    </div>
+                    <div class="boxcontainer">
+                        <div class="body">
+                            <p class="title1">${items.title}</p>
+                            <ul>
+                                <li class="description">${items.description}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sly>
+</div>
+</div>
+
+<style>
+
+    /* CSS */
+    .button-6 {
+        align-items: center;
+        background-color: #49d3d1;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: .25rem;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, 0.85);
+        cursor: pointer;
+        right: 11px;
+        bottom: 20px;
+        display: inline-flex;
+        font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        min-height: 3rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+    }
+
+    .button-6:hover,
+    .button-6:focus {
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .button-6:hover {
+        transform: translateY(-1px);
+    }
+
+    .button-6:active {
+        background-color: #F0F0F1;
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+        color: rgba(0, 0, 0, 0.65);
+        transform: translateY(0);
+    }
+
+    .time {
+        color: #1bd6cc;
+        right: 15px;
+        top: -10px;
+        position: relative;
+
+    }
+
+    .link {
+        color: #1bd6cc;
+        position: relative;
+        bottom: 47px;
+        left: 332px;
+    }
+
+    .pagetitle {
+        color: blueviolet;
+        right: 15px;
+        top: -21px;
+        font-size: 17px;
+        position: relative;
+
+    }
+
+    .title1 {
+        color: #0c0c0c;
+        font-family: sans-serif;
+        top: -15px;
+        position: relative;
+    }
+
+    .description {
+        color: slategray;
+        box-sizing: border-box;
+        margin-right: 15px;
+        padding: 16px;
+        left: -34px;
+        top: -29px;
+        position: relative;
+        height: 12em;
+        width: 500px;
+    }
+
+    .timeline {
+        width: 100%;
+        max-width: 800px;
+        background: #fff;
+        left: 78px;
+        padding: 40px 50px;
+        top: 60px;
+        position: relative;
+        box-shadow: $ container-shadow;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(33% + 15px);
+        / / $ gutter / 2 bottom: 0;
+            width: $ border-width;
+            background: #ddd;
+        }
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    .timeline:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: calc(33% + 15px);
+        bottom: 0px;
+        width: 4px;
+        background: #ddd;
+    }
+
+    .entry {
+        clear: both;
+        text-align: left;
+        position: relative;
+    }
+
+    .title {
+        margin-bottom: 0.5em;
+        float: left;
+        width: 33%;
+        padding-right: $ gutter;
+        text-align: right;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: $ dot-diameter;
+            height: $ dot-diameter;
+            border: $ border-width solid salmon;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 15%;
+            right: -$ dot-diameter;
+            z-index: 99;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 120%;
+        }
+
+        p {
+            margin: 0;
+            font-size: 100%;
+        }
+    }
+
+    .body {
+        margin: 0 0 3em;
+        float: right;
+        width: 66%;
+        padding-left: $ gutter;
+
+        p {
+            line-height: 1.4em;
+
+            &:first-child {
+                margin-top: 0;
+                font-weight: 400;
+            }
+        }
+
+        ul {
+            color: #aaa;
+            padding-left: 0;
+            list-style-type: none;
+
+            li:before {
+                content: "–";
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    .timeline {
+        width: 100%;
+        max-width: 800px;
+        background: #fff;
+        padding: 40px 50px;
+        position: relative;
+        box-shadow: /* Replace with actual value for $container-shadow */;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(33% + 15px); /* Replace with actual value for $gutter/2 */
+            bottom: 0;
+            width: /* Replace with actual value for $border-width */;
+            background: #ddd;
+        }
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    .entry {
+        clear: both;
+        text-align: left;
+        position: relative;
+    }
+
+    .title {
+        margin-bottom: 0.5em;
+        float: left;
+        width: 33%;
+        padding-right: /* Replace with actual value for $gutter */;
+        text-align: right;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: /* Replace with actual value for $dot-diameter */;
+            height: /* Replace with actual value for $dot-diameter */;
+            border: /* Replace with actual value for $border-width */ solid salmon;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 15%;
+            right: /* Replace with actual value for -$dot-diameter */;
+            z-index: 99;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 120%;
+        }
+
+        p {
+            margin: 0;
+            font-size: 100%;
+        }
+    }
+
+    .body {
+        margin: 0 0 3em;
+        float: right;
+        width: 66%;
+        padding-left: /* Replace with actual value for $gutter */;
+
+        p {
+            line-height: 1.4em;
+
+            &:first-child {
+                margin-top: 0;
+                font-weight: 400;
+            }
+        }
+
+        ul {
+            color: #aaa;
+            padding-left: 0;
+            list-style-type: none;
+
+            li:before {
+                content: "–";
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    .boxcontainer {
+        border-radius: 3px;
+        border: 2px solid #d9d3d5;
+        box-sizing: border-box;
+        margin-right: 16px;
+        padding: 16px;
+        left: 30px;
+        top: 12px;
+        position: relative;
+        height: 15em;
+        width: 536px;
+        display: grid;
+
+    }
+
+    .boxcontainer:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+</style>

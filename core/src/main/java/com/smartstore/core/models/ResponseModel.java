@@ -80,7 +80,7 @@ public class ResponseModel {
     }
 
     public String getMessage() {
-        return message;
+        return message.replaceAll("\\r|\\n", "");
     }
 
     public String getReDirectTitle() {
