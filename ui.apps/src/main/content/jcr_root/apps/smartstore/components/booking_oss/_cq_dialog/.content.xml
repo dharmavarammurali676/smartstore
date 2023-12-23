@@ -52,6 +52,12 @@
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldLabel="booking_paymentButton"
                                     name="./paymentButton"/>
+                            <paymentButtonLink
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Payment Button Link"
+                                    name="./paymentButtonLink"
+                                    rootPath="/content/smartstore"/>
                         </items>
                     </column>
                 </items>

@@ -41,6 +41,13 @@ public class LoginModel {
 
     @ChildResource
     private String forgetButton;
+    @ChildResource
+    private String headerLogo;
+
+    public String getHeaderLogo() {
+        return headerLogo;
+    }
+
 
     public String getWebDescription() {
         return webDescription;

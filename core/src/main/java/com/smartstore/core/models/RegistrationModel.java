@@ -28,6 +28,12 @@ public class RegistrationModel {
 
     @ChildResource
     private String loginLink;
+    @ChildResource
+    private String headerLogo;
+
+    public String getHeaderLogo() {
+        return headerLogo;
+    }
 
     public String getWebDescription() {
         return webDescription;

@@ -30,7 +30,14 @@ public class BookingModel {
     private String paymentButton;
 
     @ChildResource
+    private String paymentButtonLink;
+
+    @ChildResource
     private String policies;
+
+    public String getPaymentButtonLink() {
+        return paymentButtonLink;
+    }
 
     public String getImagePath() {
         return imagePath;

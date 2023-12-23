@@ -30,7 +30,7 @@ import java.io.PrintWriter;
                 "sling.servlet.paths=" + Constants.SHOW_DELETE_ORDER_PATH,
                 "sling.servlet.selectors=js"
         })
-public class ShowandDeleteOrdersServlet extends SlingAllMethodsServlet {
+public class ShowAndDeleteOrdersServlet extends SlingAllMethodsServlet {
 
     private static final long serialVersionUID = -7287394343636304212L;
 

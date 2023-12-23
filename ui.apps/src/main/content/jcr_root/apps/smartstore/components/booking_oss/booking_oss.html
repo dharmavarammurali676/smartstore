@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="https://play-lh.googleusercontent.com/uURh3devCJnq0E4df7nGxiiZ66QKotH_KILfK-jvhd-WYgRPm5S1iojFPSYnFM0QAw=w240-h480-rw" type="image/png" sizes="16x16">
+    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocIZ7WZxhvrbKgk5MvNBSinxvc3m2RdguL0I2-qkzRqX-OVQ4xnQU7wLbCIJ2m-LG4rcbES39VXjLv4XcjS7TUUAYw=s32" type="image/png" sizes="19x19">
      <title>Booking_Product</title>
 </head>
 
@@ -190,7 +190,7 @@
             <!-- Include SweetAlert library -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
-            <button class="button" style="vertical-align:middle"><span>${model.paymentButton}</span></button>
+            <a href="${model.paymentButtonLink}" class="button" style="vertical-align:middle"><span>${model.paymentButton}</span></a>
         </div>
     </sly>
 </div>
@@ -406,9 +406,11 @@ position: relative;
 }
 
 .button{
-  background-color: white;
-  color: black;
-  border: 1px solid #008CBA;
+    background-color: white;
+    position: relative;
+    left: 835px;
+    color: black;
+    border: 1px solid #008CBA;
 }
 
 .button:hover {

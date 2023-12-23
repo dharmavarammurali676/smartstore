@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Title Properties"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Properties"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Title"
+                                            emptyText="Enter title"
+                                            name="./title"
+                                            required="{Boolean}true"/>
+                                    <textFormat
+                                            granite:class="pdfviewer-type-selector"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Type"
+                                            name="./textFormat">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="-- Select --"
+                                                    value="select"/>
+                                            <default_p
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Paragraph"
+                                                    value="paragraph"/>
+                                            <default_h1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H1"
+                                                    value="h1"/>
+                                            <default_h2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H2"
+                                                    value="h2"/>
+                                            <default_h3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H3"
+                                                    value="h3"/>
+                                            <default_h4
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H4"
+                                                    value="h4"/>
+                                            <default_h5
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H5"
+                                                    value="h5"/>
+                                            <default_h6
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="H6"
+                                                    value="h6"/>
+                                            <default_blockquote
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Blockquote"
+                                                    value="blockquote"/>
+                                            <default_strong
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Strong"
+                                                    value="strong"/>
+                                        </items>
+                                    </textFormat>
+                                </items>
+                            </column>
+                        </items>
+                    </tab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
+

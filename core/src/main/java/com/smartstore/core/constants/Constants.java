@@ -241,9 +241,12 @@ public class Constants {
     public static final String MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_failure.html";
     public static final String SPECIAL_MEMBERS_SUCCESS_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_successfull.html";
     public static final String SPECIAL_MEMBERS_FAILURE_RESPONSE_REDIRECT = "/content/smartstore/admin_configuration/status/registration_failure.html";
-    public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH= "/content/smartstore/root_page.html";
+    public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH= "/content/smartstore/home-page.html";
+
+    public static final String SPECIAL_MEMBERS_LOGIN_WITHOUT_REGISTRATION_PATH= "/content/smartstore/admin_configuration/status/login-without-registration.html";
+    public static final String SPECIAL_MEMBERS_LOGIN_FAILED= "/content/smartstore/admin_configuration/status/login_failed.html";
     public static final String LOGIN_ATTEMPT_FAILED_PATH= "/content/smartstore/admin_configuration/status/login_failed.html";
-    public static final String MEMBERS_HOME_PAGE_PATH= "/content/smartstore/english/members/home_page.html";
+    public static final String MEMBERS_HOME_PAGE_PATH= "/content/smartstore/home-page.html";
     public static final String SPECIAL_MEMBERS_HOME_PAGE_PATH_ERROR= "/content/smartstore/english/special_members/responce/invalid.html";
     public static final String MEMBERS_HOME_PAGE_PATH_ERROR= "/content/smartstore/english/members/responce/invalid.html";
     public static final String ROOT_PATH_MEMBERS = "/database/smartstore/members";

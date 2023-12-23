@@ -1,0 +1,133 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Title Component'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories = 'hoveghnr'}"/>
+<div data-sly-use.model="com.smartstore.core.models.TitleModel">
+    <div class="${model.applyCss}">
+        ${model.title}
+    </div>
+    </sly>
+</div>
+</head>
+
+<style>
+    .default-cmp-paragraph {
+        font-size: 25px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 13px;
+        max-width: 453px;
+        height: 50px;
+        display: grid;
+    }
+
+    .default-cmp-h1 {
+        font-weight: bold;
+        font-size: 32px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 13px;
+        max-width: 453px;
+        height: 50px;
+        display: grid;
+    }
+
+    .default-cmp-h2 {
+        font-weight: bold;
+        font-size: 24px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 13px;
+        max-width: 453px;
+        height: 50px;
+        display: grid;
+    }
+
+    .default-cmp-h3 {
+        font-weight: bold;
+        font-size: 18px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 13px;
+        max-width: 453px;
+        height: 50px;
+        display: grid;
+    }
+
+    .default-cmp-h4 {
+        font-weight: bold;
+        font-size: 16px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 13px;
+        max-width: 453px;
+        height: 50px;
+        display: grid;
+    }
+
+    .default-cmp-h5 {
+        font-weight: bold;
+        font-size: 14px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 13px;
+        max-width: 453px;
+        height: 50px;
+        display: grid;
+    }
+
+    .default-cmp-h6 {
+        font-weight: bold;
+        font-size: 12px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+    }
+
+    .default-cmp-blockquoter {
+        font-size: 25px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+    }
+
+    default-cmp-blockquoter::before {
+        content: '\201C';
+    }
+
+    default-cmp-blockquoter::after {
+        content: '\201D';
+    }
+
+    .default-cmp-strong {
+        font-size: 25px;
+        bottom: 77px;
+        border-left: 6px solid red;
+        background-color: #e0e5e587;
+        position: relative;
+    }
+</style>

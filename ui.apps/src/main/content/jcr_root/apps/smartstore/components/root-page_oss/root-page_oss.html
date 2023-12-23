@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocIZ7WZxhvrbKgk5MvNBSinxvc3m2RdguL0I2-qkzRqX-OVQ4xnQU7wLbCIJ2m-LG4rcbES39VXjLv4XcjS7TUUAYw=s32" type="image/png" sizes="19x19">
+    <title>Home Page</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td {
+            border: 0px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .boxcontainer {
+            display: block;
+            text-align: center;
+            border-radius: 3px;
+            border: 1px solid #bdc2c0;
+            box-sizing: border-box;
+            margin-right: 22px;
+            padding: 14px;
+            position: relative;
+            left: 67px;
+            max-width: 601px;
+            font-family: system-ui;
+            font-size: 15px;
+            height: 23em;
+            display: grid;
+            box-shadow: rgba(8, 175, 248, 0.12) 0px 2px 4px 0px, rgba(6, 175, 250, 0.42) 0px 2px 16px 0px;
+            transition: border-color 0.3s, box-shadow 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .boxcontainer:hover,
+        .boxcontainer:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+            color: rgba(0, 0, 0, 0.65);
+        }
+
+        .boxcontainer:hover {
+            transform: translateY(-1px);
+        }
+
+        .boxcontainer:active {
+            background-color: #F0F0F1;
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
+        }
+
+        .space_container {
+            border-radius: 3px;
+            border: 1px solid #bdc2c0;
+            box-sizing: border-box;
+            margin-right: -29px;
+            padding: 14px;
+            min-width: 291px;
+            max-width: 482px;
+            font-family: system-ui;
+            font-size: 15px;
+            height: 3em;
+            display: grid;
+        }
+
+        .image {
+            width: 70px;
+            position: relative;
+            right: 239px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .heading {
+            margin-top: 5px;
+            bottom: 65px;
+            position: relative;
+            font-family: sans-serif;
+            color: saddlebrown;
+        }
+        .description1 {
+            margin-top: -28px;
+            font-family: system-ui;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding: 5px;
+            min-width: 570px;
+            max-width: 330px;
+            height: 253px;
+            display: grid;
+        }
+
+        .buttonLabel {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='Home Page Component'}"></sly>
+
+<div data-sly-use.model="com.smartstore.core.models.HomePageModel">
+
+    <table>
+        <tr>
+            <td>
+                <a class="boxcontainer" href="http://localhost:6502/editor.html/content/smartstore/home-page/authentication_root-page.html">
+                    <div data-sly-list.item="${model.leftItems}">
+                        <img class="image" src="${item.imagePath}" alt="Image">
+                        <div class="heading">${item.heading}</div>
+                        <div class="description1">${item.description}</div>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a class="boxcontainer" href="http://localhost:6502/editor.html/content/smartstore/home-page/booking-root-page.html">
+                    <div data-sly-list.item="${model.rightItems}">
+                        <img class="image" src="${item.imagePath}" alt="Image">
+                        <div class="heading">${item.heading}</div>
+                        <div class="description1">${item.description}</div>
+                    </div>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

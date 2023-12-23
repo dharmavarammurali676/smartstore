@@ -35,6 +35,9 @@ public class ResponseModel {
     private String reDirectLink;
 
     @ChildResource
+    private String rightButtonLink;
+
+    @ChildResource
     private String statuses;
 
     @ChildResource
@@ -42,6 +45,10 @@ public class ResponseModel {
 
     @ChildResource
     private String leftButtonName;
+
+    public String getRightButtonLink() {
+        return rightButtonLink;
+    }
 
     public String getRightButtonName() {
         return rightButtonName;
@@ -90,4 +97,5 @@ public class ResponseModel {
     public String getReDirectLink() {
         return reDirectLink;
     }
+
 }

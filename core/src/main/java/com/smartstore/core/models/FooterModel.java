@@ -13,6 +13,8 @@ public class FooterModel {
     @ChildResource
     private String message;
     @ChildResource
+    private String footerLogo;
+    @ChildResource
     private String headingOne;
 
     @ChildResource
@@ -110,6 +112,10 @@ public class FooterModel {
 
     @ChildResource
     private String address;
+
+    public String getFooterLogo() {
+        return footerLogo;
+    }
 
     public String getMessage() {
         return message;

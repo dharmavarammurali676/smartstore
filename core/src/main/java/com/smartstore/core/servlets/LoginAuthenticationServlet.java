@@ -66,7 +66,8 @@ public class LoginAuthenticationServlet extends SlingAllMethodsServlet {
 //           generateLoginSuccessEmailContent(email,Constants.SPECIAL_MEMBER,"Murali"));
                 response.sendRedirect(Constants.SPECIAL_MEMBERS_HOME_PAGE_PATH);
             } else {
-                sendAlertEmail(email);
+                //sendAlertEmail(email);
+                response.sendRedirect(Constants.SPECIAL_MEMBERS_LOGIN_FAILED);
                 request.setAttribute("errorMessage", "Login failed. Please check your credentials.");
             }
         } else {
@@ -88,7 +89,7 @@ public class LoginAuthenticationServlet extends SlingAllMethodsServlet {
         Resource membersResourse = resourceResolver.getResource(Constants.ROOT_PATH_MEMBERS);
         LoginCredentials loginCredentials = new LoginCredentials();
         String storedOtp = loginCredentials.getLoginOtp();
-        Map<String, String> storedCredentials = credentials(resourceResolver, membersResourse);
+        Map<String, String> storedCredentials = credentials(resourceResolver, membersResourse,email,response);
         boolean isValidCredentials = false;
         for (Map.Entry<String, String> credentials : storedCredentials.entrySet()) {
             String storedEmail = credentials.getKey();
@@ -114,7 +115,7 @@ public class LoginAuthenticationServlet extends SlingAllMethodsServlet {
         Resource specialMembersResourse = resourceResolver.getResource(Constants.ROOT_PATH_SPECIAL_MEMBERS);
         LoginCredentials loginCredentials = new LoginCredentials();
         String storedOtp = loginCredentials.getLoginOtp();
-        Map<String, String> storedCredentials = credentials(resourceResolver, specialMembersResourse);
+        Map<String, String> storedCredentials = credentials(resourceResolver, specialMembersResourse, email,response);
         boolean isValidCredentials = false;
         for (Map.Entry<String, String> credentials : storedCredentials.entrySet()) {
             String storedEmail = credentials.getKey();
@@ -134,17 +135,22 @@ public class LoginAuthenticationServlet extends SlingAllMethodsServlet {
         return isValidCredentials;
     }
 
-    private Map<String, String> credentials(ResourceResolver resourceResolver, Resource resource) {
+    private Map<String, String> credentials(ResourceResolver resourceResolver, Resource resource, String email,SlingHttpServletResponse response) throws IOException {
 
         Map<String, String> credentials = new HashMap<>();
 
         Iterator<Resource> children = resource.listChildren();
         while (children.hasNext()) {
             Resource childResource = children.next();
-            ValueMap properties = childResource.getValueMap();
-            String email = properties.get(Constants.EMAIL, String.class);
-            String password = properties.get(Constants.PASSWORD, String.class);
-            credentials.put(email, password);
+            String dataBaseStoredEmail = childResource.getName();
+            if (dataBaseStoredEmail.equals(email)) {
+                ValueMap properties = childResource.getValueMap();
+                String dbEmail = properties.get(Constants.EMAIL, String.class);
+                String dbPassword = properties.get(Constants.PASSWORD, String.class);
+                credentials.put(dbEmail, dbPassword);
+            } else {
+                response.sendRedirect(Constants.SPECIAL_MEMBERS_LOGIN_WITHOUT_REGISTRATION_PATH);
+            }
         }
 
         return credentials;
